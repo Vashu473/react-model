@@ -20,10 +20,7 @@ const Dashboard = () => {
   });
   const [data, setData] = useState([]);
   const updateData = async () => {
-    let delay = (parseInt(id.timer) - parseInt(id.current) - 2) * 1000;
-    setTimeout(async () => {
-      await postFetch(UPDATE, input);
-    }, delay);
+    await postFetch(UPDATE, input);
     toast.info(`Data will update in withitn ${id.timer} sec`, config);
   };
   const handleChange = (e) => {
